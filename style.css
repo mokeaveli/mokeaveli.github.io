@@ -2,15 +2,14 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 20px; /* Uniform padding around the content */
     color: #333;
 }
 
 header {
     background: #333;
     color: #fff;
-    padding-top: 1rem;
-    min-height: 70px;
+    padding: 1rem 0;
     border-bottom: #0779e4 3px solid;
 }
 
@@ -21,14 +20,15 @@ header a {
 }
 
 nav ul {
-    padding: 0;
     list-style: none;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 10px;
 }
 
 footer {
@@ -36,7 +36,54 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: fixed;
+    position: relative; /* Changed to relative for better responsiveness */
     bottom: 0;
     width: 100%;
+}
+
+/* Adjustments for education sections to reduce space and center */
+.education-container, .experience-item, .education-item, .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.education-half {
+    flex: 1 1 45%; /* Allows flexibility in the basis and growth */
+    margin: 10px; /* Adjusted for uniform spacing */
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block; /* Stack nav items vertically on smaller screens */
+        margin: 10px 0; /* Adjust spacing for stacked items */
+    }
+
+    .education-half, .content-container {
+        flex: 1 1 100%; /* Full width on smaller screens */
+        margin: 10px 0; /* Adjusted margin for vertical layout */
+    }
+
+    body, header, footer, .education-container, .experience-item, .education-item {
+        padding: 10px; /* Reduced padding on smaller screens */
+    }
+}
+
+/* Responsive typography */
+h1, h2, p {
+    padding: 0 5%; /* Adds padding to text elements for better readability */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px; /* Smaller font size for h1 on very small screens */
+    }
+
+    h2 {
+        font-size: 18px; /* Smaller font size for h2 on very small screens */
+    }
+
+    p {
+        font-size: 14px; /* Adjust paragraph font size for readability */
+    }
 }
